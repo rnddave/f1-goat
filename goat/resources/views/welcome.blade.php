@@ -1,4 +1,4 @@
-@props(['cardType']);
+@props(['cardType'])
 
 <x-layout>
     <x-card card-type="drivers" />
