@@ -9,7 +9,7 @@
                 <x-drivers-component />
             @elseif ($cardType == 'teams')
                 <x-teams-component />
-            @else ()
+            @elseif ($cardType == 'engines')
                 <x-engines-component />
             @endif
         </div>
