@@ -18,7 +18,7 @@
             <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="" />
             <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+                    <header class="grid grid-cols-1 items-center gap-2 py-2 lg:grid-cols-3">
                         <div class="flex lg:justify-center lg:col-start-2">
                             <img src="./images/f1-goat-logo-3.png" />
                         </div>
@@ -31,9 +31,7 @@
                         </div>
                     </main>
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        F1 - G O A T 
-                    </footer>
+                    <x-footer />
                 </div>
             </div>
         </div>
