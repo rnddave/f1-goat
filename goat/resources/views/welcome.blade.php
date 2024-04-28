@@ -2,6 +2,5 @@
 
 <x-layout>
     <x-hero />
-    <x-hero />
-    
+    <x-current-season />
 </x-layout>
