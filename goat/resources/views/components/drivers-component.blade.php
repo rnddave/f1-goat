@@ -6,8 +6,12 @@
     <h2 class="text-xl font-semibold text-black dark:text-white">Drivers</h2>
 
     <p class="mt-4 text-sm/relaxed">
-        
+      <video width="640" height="480" controls>
+        <source src="./images/f1_driver_championships.mp4" type="video/mp4">
+      </video>
+      <br>
     </p>
+    
     
 
     <style type="text/css">
@@ -105,7 +109,7 @@
             <td class="tg-961s"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png" alt="Spain" width="23" height="15"># <a href="https://en.wikipedia.org/wiki/Fernando_Alonso" target="_blank" rel="noopener noreferrer"><span style="text-decoration:none;color:#36C">Fernando Alonso</span></a></td>
             <td class="tg-rreo"><a href="https://en.wikipedia.org/wiki/2005_Formula_One_World_Championship" target="_blank" rel="noopener noreferrer"><span style="text-decoration:none;color:#36C">2005</span></a>, <a href="https://en.wikipedia.org/wiki/2006_Formula_One_World_Championship" target="_blank" rel="noopener noreferrer"><span style="text-decoration:none;color:#36C">2006</span></a></td>
           </tr>
-          <tr>
+          {{-- <tr>
             <td class="tg-961s"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/23px-Flag_of_Italy.svg.png" alt="Italy" width="23" height="15"># <a href="https://en.wikipedia.org/wiki/Giuseppe_Farina" target="_blank" rel="noopener noreferrer"><span style="text-decoration:none;color:#36C">Giuseppe Farina</span></a></td>
             <td class="tg-390z" rowspan="17">1</td>
             <td class="tg-rreo"><a href="https://en.wikipedia.org/wiki/1950_Formula_One_season" target="_blank" rel="noopener noreferrer"><span style="text-decoration:none;color:#36C">1950</span></a></td>
@@ -173,7 +177,7 @@
           <tr>
             <td class="tg-961s"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png" alt="Germany" width="23" height="14"># <a href="https://en.wikipedia.org/wiki/Nico_Rosberg" target="_blank" rel="noopener noreferrer"><span style="text-decoration:none;color:#36C">Nico Rosberg</span></a></td>
             <td class="tg-rreo"><a href="https://en.wikipedia.org/wiki/2016_Formula_One_World_Championship" target="_blank" rel="noopener noreferrer"><span style="text-decoration:none;color:#36C">2016</span></a></td>
-          </tr>
+          </tr> --}}
         </tbody>
         </table></div>
 </div>

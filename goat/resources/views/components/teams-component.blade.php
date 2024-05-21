@@ -6,7 +6,11 @@
     <h2 class="text-xl font-semibold text-black dark:text-white">Teams</h2>
 
     <p class="mt-4 text-sm/relaxed">
-        
+      <video width="640" height="480" controls>
+        <source src="./images/f1_constructor_championships.mp4" type="video/mp4">
+      </video>
+      <br>
+      
     </p>
 
     <style type="text/css">
