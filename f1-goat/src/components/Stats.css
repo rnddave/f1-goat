@@ -1,20 +1,12 @@
 .stats {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  padding: 2rem;
-}
-
-.stats-column {
-  width: 100%;
-  max-width: 800px; /* Set a maximum width for the tables */
-  margin: 1rem 0; /* Add vertical spacing between columns */
-  text-align: center;
-  position: relative; /* Ensure positioning context for the logo */
+  flex-direction: column;
+  align-items: center;
 }
 
 .stats-container {
-  position: relative; /* Ensure the logo can be positioned relative to this container */
+  position: relative;
+  margin: 1rem 0;
 }
 
 .floating-logo {
