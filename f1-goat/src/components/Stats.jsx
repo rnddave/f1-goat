@@ -12,30 +12,23 @@ import engineLogo from '../assets/f1-engine-x.png'; // Import the engine logo
 
 const Stats = () => {
   return (
-    <section className="stats">
-      <div className="stats-column">
-        <div className="stats-container">
-          <h2>Top Driver Champions</h2>
-          <ChampionDriversTable data={championDrivers} />
-          <img src={driverLogo} alt="F1 Driver Logo" className="floating-logo" />
-        </div>
+    <div className="stats">
+      <div className="stats-container">
+        <h2>Top Driver Champions</h2>
+        <ChampionDriversTable data={championDrivers} />
+        <img src={driverLogo} alt="F1 Driver Logo" className="floating-logo" />
       </div>
-
-      <div className="stats-column">
-        <div className="stats-container">
-          <h2>Top Constructor Champions</h2>
-          <ChampionConstructorsTable data={championConstructors} />
-          <img src={teamLogo} alt="F1 Team Logo" className="floating-logo" />
-        </div>
+      <div className="stats-container">
+        <h2>Top Constructor Champions</h2>
+        <ChampionConstructorsTable data={championConstructors} />
+        <img src={teamLogo} alt="F1 Team Logo" className="floating-logo" />
       </div>
-      <div className="stats-column">
-        <div className="stats-container">
-          <h2>Top Engine Manufacturers</h2>
-          <ChampionEnginesTable data={championEngines} />
-          <img src={engineLogo} alt="F1 Engine Logo" className="floating-logo" />
-        </div>
+      <div className="stats-container">
+        <h2>Top Engine Manufacturers</h2>
+        <ChampionEnginesTable data={championEngines} />
+        <img src={engineLogo} alt="F1 Engine Logo" className="floating-logo" />
       </div>
-    </section>
+    </div>
   );
 };
 
