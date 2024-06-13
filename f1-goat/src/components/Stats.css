@@ -1,36 +1,28 @@
 .stats {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
 }
 
 .stats-column {
-  flex: 1;
-  margin: 0 1rem;
-  min-width: 300px;
+  width: 100%;
+  max-width: 800px; /* Set a maximum width for the tables */
+  margin: 1rem 0; /* Add vertical spacing between columns */
   text-align: center;
+  position: relative; /* Ensure positioning context for the logo */
 }
 
-.stats-column h2 {
-  text-align: center;
+.stats-container {
+  position: relative; /* Ensure the logo can be positioned relative to this container */
 }
 
-.stats-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.stats-column li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.stats-column img {
-  margin-right: 1rem;
+.floating-logo {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  width: 50px; /* Adjust the size of the logo as needed */
+  transform: rotate(10deg); /* Rotate the logo 10 degrees */
+  z-index: 10; /* Ensure it appears above the table */
+  pointer-events: none; /* Prevent the logo from interfering with table interactions */
 }
