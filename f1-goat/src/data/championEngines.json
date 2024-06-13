@@ -1,0 +1,15 @@
+[
+    { "Manufacturer": "Ferrari", "Titles": 16, "Seasons": "1961, 1964, 1975, 1976, 1977, 1979, 1982, 1983, 1999, 2000, 2001, 2002, 2003, 2004, 2007, 2008" },
+    { "Manufacturer": "Renault", "Titles": 12, "Seasons": "1992, 1993, 1994, 1995, 1996, 1997, 2005, 2006, 2010, 2011, 2012, 2013" },
+    { "Manufacturer": "Ford", "Titles": 10, "Seasons": "1968, 1969, 1970, 1971, 1972, 1973, 1974, 1978, 1980, 1981" },
+    { "Manufacturer": "Mercedes", "Titles": 10, "Seasons": "1998, 2009, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021" },
+    { "Manufacturer": "Honda", "Titles": 6, "Seasons": "1986, 1987, 1988, 1989, 1990, 1991" },
+    { "Manufacturer": "Climax", "Titles": 4, "Seasons": "1959, 1960, 1963, 1965" },
+    { "Manufacturer": "Repco", "Titles": 2, "Seasons": "1966, 1967" },
+    { "Manufacturer": "TAG", "Titles": 1, "Seasons": "1984, 1985" },
+    { "Manufacturer": "Vanwall", "Titles": 1, "Seasons": "1958" },
+    { "Manufacturer": "BRM", "Titles": 1, "Seasons": "1962" },
+    { "Manufacturer": "RBPT", "Titles": 1, "Seasons": "2022" },
+    { "Manufacturer": "Honda RBPT", "Titles": 1, "Seasons": "2023" }
+  ]
+  

@@ -1,0 +1,29 @@
+.table-container {
+    overflow-x: auto;
+    margin: 20px;
+  }
+  
+  .champion-drivers-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .champion-drivers-table th, .champion-drivers-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .champion-drivers-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .champion-drivers-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .champion-drivers-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  

@@ -1,58 +1,39 @@
 import React from 'react';
 import './Stats.css';
+import ChampionDriversTable from './ChampionDriversTable';
+import ChampionConstructorsTable from './ChampionConstructorsTable';
+import ChampionEnginesTable from './ChampionEnginesTable';
+import championDrivers from '../data/championDrivers.json';
+import championConstructors from '../data/championConstructors.json';
+import championEngines from '../data/championEngines.json';
+import driverLogo from '../assets/f1-driver-x.png'; // Import the driver logo
+import teamLogo from '../assets/f1-team-x.png'; // Import the team logo
+import engineLogo from '../assets/f1-engine-x.png'; // Import the engine logo
 
 const Stats = () => {
-  const driverChampions = [
-    // { name, years, flag, wikipediaLink }
-  ];
-
-  const teamChampions = [
-    // { name, years, wikipediaLink }
-  ];
-
-  const engineChampions = [
-    // { name, years }
-  ];
-
   return (
     <section className="stats">
       <div className="stats-column">
-        <h2>Top 20 Driver Champions</h2>
-        <ul>
-          {driverChampions.map((driver, index) => (
-            <li key={index}>
-              <img src={driver.flag} alt={`${driver.name}'s flag`} />
-              <a href={driver.wikipediaLink} target="_blank" rel="noopener noreferrer">
-                {driver.name}
-              </a>
-              <span>{driver.years.join(', ')}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="stats-container">
+          <h2>Top Driver Champions</h2>
+          <ChampionDriversTable data={championDrivers} />
+          <img src={driverLogo} alt="F1 Driver Logo" className="floating-logo" />
+        </div>
+      </div>
+
+      <div className="stats-column">
+        <div className="stats-container">
+          <h2>Top Constructor Champions</h2>
+          <ChampionConstructorsTable data={championConstructors} />
+          <img src={teamLogo} alt="F1 Team Logo" className="floating-logo" />
+        </div>
       </div>
       <div className="stats-column">
-        <h2>Top 20 Team Champions</h2>
-        <ul>
-          {teamChampions.map((team, index) => (
-            <li key={index}>
-              <a href={team.wikipediaLink} target="_blank" rel="noopener noreferrer">
-                {team.name}
-              </a>
-              <span>{team.years.join(', ')}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="stats-column">
-        <h2>Top 20 Engine Manufacturers</h2>
-        <ul>
-          {engineChampions.map((engine, index) => (
-            <li key={index}>
-              {engine.name}
-              <span>{engine.years.join(', ')}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="stats-container">
+          <h2>Top Engine Manufacturers</h2>
+          <ChampionEnginesTable data={championEngines} />
+          <img src={engineLogo} alt="F1 Engine Logo" className="floating-logo" />
+        </div>
       </div>
     </section>
   );

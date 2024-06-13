@@ -1,0 +1,29 @@
+.table-container {
+    overflow-x: auto;
+    margin: 20px;
+  }
+  
+  .champion-engines-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .champion-engines-table th, .champion-engines-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .champion-engines-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .champion-engines-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .champion-engines-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  

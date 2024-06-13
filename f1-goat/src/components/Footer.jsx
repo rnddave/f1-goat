@@ -6,18 +6,20 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-left">
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faGithub} size="2x" />
-        </a>
-      </div>
-      <div className="footer-center">
-        <a href="/">Who is the F1 GOAT?</a>
-      </div>
-      <div className="footer-right">
-        <a href="https://www.linkedin.com/in/yourusername/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={faLinkedin} size="2x" />
-        </a>
+      <div className="footer-content">
+        <div className="footer-left">
+          <a href="https://github.com/rnddave" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faGithub} size="2x" />
+          </a>
+        </div>
+        <div className="footer-center">
+          <a href="/">Who is the F1 GOAT?</a>
+        </div>
+        <div className="footer-right">
+          <a href="https://www.linkedin.com/in/david-dickinson-b3704731" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+        </div>
       </div>
     </footer>
   );

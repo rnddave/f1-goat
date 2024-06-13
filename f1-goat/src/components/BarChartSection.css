@@ -1,15 +1,33 @@
 .bar-chart-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack columns vertically */
+  align-items: center;
   padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
 }
 
 .bar-chart-column {
-  flex: 1;
-  margin: 0 1rem;
-  min-width: 300px;
+  width: 100%;
+  max-width: 800px; /* Set a maximum width for the videos */
+  margin: 1rem 0; /* Add vertical spacing between columns */
   text-align: center;
+  position: relative; /* Ensure positioning context for the logo */
+}
+
+.video-container {
+  position: relative; /* Ensure the logo can be positioned relative to this container */
+}
+
+.video-container video {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.floating-logo {
+  position: absolute;
+  top: 40px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  width: 50px; /* Adjust the size of the logo as needed */
+  transform: rotate(10deg); /* Rotate the logo 10 degrees */
+  z-index: 10; /* Ensure it appears above the video */
+  pointer-events: none; /* Prevent the logo from interfering with video controls */
 }
