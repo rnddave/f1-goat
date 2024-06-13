@@ -1,58 +1,26 @@
 import React from 'react';
 import './Stats.css';
+import ChampionDriversTable from './ChampionDriversTable';
+import ChampionConstructorsTable from './ChampionConstructorsTable';
+import ChampionEnginesTable from './ChampionEnginesTable';
+import championDrivers from '../data/championDrivers.json';
+import championConstructors from '../data/championConstructors.json';
+import championEngines from '../data/championEngines.json';
 
 const Stats = () => {
-  const driverChampions = [
-    // { name, years, flag, wikipediaLink }
-  ];
-
-  const teamChampions = [
-    // { name, years, wikipediaLink }
-  ];
-
-  const engineChampions = [
-    // { name, years }
-  ];
-
   return (
     <section className="stats">
       <div className="stats-column">
-        <h2>Top 20 Driver Champions</h2>
-        <ul>
-          {driverChampions.map((driver, index) => (
-            <li key={index}>
-              <img src={driver.flag} alt={`${driver.name}'s flag`} />
-              <a href={driver.wikipediaLink} target="_blank" rel="noopener noreferrer">
-                {driver.name}
-              </a>
-              <span>{driver.years.join(', ')}</span>
-            </li>
-          ))}
-        </ul>
+        <h2>Top Driver Champions</h2>
+        <ChampionDriversTable data={championDrivers} />
       </div>
       <div className="stats-column">
-        <h2>Top 20 Team Champions</h2>
-        <ul>
-          {teamChampions.map((team, index) => (
-            <li key={index}>
-              <a href={team.wikipediaLink} target="_blank" rel="noopener noreferrer">
-                {team.name}
-              </a>
-              <span>{team.years.join(', ')}</span>
-            </li>
-          ))}
-        </ul>
+        <h2>Top Constructor Champions</h2>
+        <ChampionConstructorsTable data={championConstructors} />
       </div>
       <div className="stats-column">
-        <h2>Top 20 Engine Manufacturers</h2>
-        <ul>
-          {engineChampions.map((engine, index) => (
-            <li key={index}>
-              {engine.name}
-              <span>{engine.years.join(', ')}</span>
-            </li>
-          ))}
-        </ul>
+        <h2>Top Engine Manufacturers</h2>
+        <ChampionEnginesTable data={championEngines} />
       </div>
     </section>
   );

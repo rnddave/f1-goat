@@ -1,15 +1,31 @@
 .bar-chart-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack columns vertically */
+  align-items: center;
   padding: 2rem;
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
 }
 
 .bar-chart-column {
-  flex: 1;
-  margin: 0 1rem;
-  min-width: 300px;
+  width: 100%;
+  max-width: 800px; /* Set a maximum width for the videos */
+  margin: 1rem 0; /* Add vertical spacing between columns */
   text-align: center;
+}
+
+.bar-chart-column video {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for screens less than 800px wide */
+@media (max-width: 800px) {
+  .bar-chart-section {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center the columns */
+  }
+
+  .bar-chart-column {
+    margin: 1rem 0; /* Add vertical spacing between columns */
+    width: 100%; /* Ensure columns take full width */
+  }
 }

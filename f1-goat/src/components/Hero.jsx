@@ -7,11 +7,16 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-content">
         <div className="hero-left">
-          <h1>Welcome to F1 Stats</h1>
-          <p>Your one-stop source for F1 statistics and information.</p>
+          <img src={logo} alt="F1 GOAT Logo" />
         </div>
         <div className="hero-right">
-          <img src={logo} alt="F1 GOAT Logo" />
+          {/* <h1>Welcome to F1 Stats</h1> */}
+          <p>My name is <a href="https://david-dickinson.com" target="_blank" rel="noopener noreferrer">David Dickinson</a> and
+          I have followed Formula 1 since being a child, 
+          watching it with my Grandad. I built this page to record the basic stats 
+            surrounding F1 but with a plan to add some 
+            twists a little later, check back soon!</p>
+        
         </div>
       </div>
     </section>

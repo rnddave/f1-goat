@@ -1,31 +1,62 @@
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  background-color: #333;
-  color: white;
   width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
+  background-color: #000; /* Dark background */
+  color: #fff; /* Bright text */
+  font-family: 'Arial', sans-serif; /* Clean, modern font */
+  padding: 1rem 0; /* Add some padding to the top and bottom */
 }
 
-.footer-left,
-.footer-right {
+.footer-content {
+  display: flex;
+  flex-wrap: wrap; /* Ensure the content wraps on smaller screens */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Ensures content is centered and doesn't stretch too wide */
+  margin: 0 auto; /* Centers the content horizontally */
+  padding: 0 1rem; /* Add padding to the left and right */
+}
+
+.footer-left, .footer-right {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 1rem;
+}
+
+.footer-left a, .footer-right a {
+  color: #fff; /* Bright link color */
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-left a:hover, .footer-right a:hover {
+  color: #f1c40f; /* F1 yellow on hover */
 }
 
 .footer-center {
-  flex: 1;
-  text-align: center;
-  margin: 1rem;
+  flex-grow: 1; /* Ensure center takes available space */
+  text-align: center; /* Center text within the div */
 }
 
 .footer-center a {
-  color: white;
+  color: #fff; /* Bright text */
   text-decoration: none;
   font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-center a:hover {
+  color: #f1c40f; /* F1 yellow on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left, .footer-right {
+    justify-content: center;
+    margin: 10px 0; /* Add spacing between elements on smaller screens */
+  }
 }

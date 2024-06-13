@@ -21,16 +21,32 @@
 .hero-left {
   flex: 1;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-right {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   padding: 1rem;
 }
 
 .hero-right img {
   max-width: 100%;
   height: auto;
+}
+
+.hero-right p {
+  font-size: large;
+  text-align: left;
+}
+
+.hero-right a {
+  color: #000000; /* F1 yellow on hover */
+}
+
+
+.hero-right a:hover {
+  color: #f1c40f; /* F1 yellow on hover */
 }
