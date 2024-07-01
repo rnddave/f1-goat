@@ -1,0 +1,27 @@
+.overall-results {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+  }
+  
+  .result-column {
+    text-align: center;
+    width: 45%;
+  }
+  
+  .result {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  
+  .result-column h2 {
+    color: #ffffff; /* Title text color */
+  }
+  
+  .result-column a {
+    display: block;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #1da1f2; /* Twitter blue */
+  }
+  
