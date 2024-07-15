@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { ref, set, get, child } from 'firebase/database';
-import { database } from './firebaseConfig';
+import { database, auth } from './firebaseConfig'; // Import the auth configuration
+import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import Hero from './components/Hero';
 import BarChartSection from './components/BarChartSection';
 import Stats from './components/Stats';
@@ -17,8 +18,13 @@ const App = () => {
     goat: localStorage.getItem('userGoatVote') || '',
     toad: localStorage.getItem('userToadVote') || ''
   });
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
+    const signInUser = async () => {
+      await signInAnonymously(auth);
+    };
+
     const fetchVotes = async () => {
       const dbRef = ref(database);
       const snapshot = await get(child(dbRef, 'votes'));
@@ -29,11 +35,26 @@ const App = () => {
       }
     };
 
-    fetchVotes();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+        fetchVotes();
+      } else {
+        signInUser();
+      }
+    });
   }, []);
 
   const handleVote = async (goat, toad) => {
     const updatedVotes = { ...votes };
+
+    if (userVotes.goat && goat && userVotes.goat !== goat) {
+      updatedVotes.goat[userVotes.goat]--;
+    }
+    if (userVotes.toad && toad && userVotes.toad !== toad) {
+      updatedVotes.toad[userVotes.toad]--;
+    }
+
     if (goat) {
       updatedVotes.goat = {
         ...updatedVotes.goat,
@@ -51,9 +72,15 @@ const App = () => {
 
     setVotes(updatedVotes);
 
-    await set(ref(database, 'votes'), updatedVotes);
+    await set(ref(database, 'votes'), updatedVotes).catch((error) => {
+      console.error("Error saving votes: ", error);
+    });
 
     setUserVotes({ goat, toad });
+  };
+
+  const handleChangeVote = () => {
+    setUserVotes({ goat: '', toad: '' });
   };
 
   const hasVoted = userVotes.goat || userVotes.toad;
@@ -63,7 +90,12 @@ const App = () => {
       <div className="App">
         <Hero />
         {!hasVoted && <Vote onVote={handleVote} />}
-        {hasVoted && <UserVotes goatVote={userVotes.goat} toadVote={userVotes.toad} />}
+        {hasVoted && (
+          <div>
+            <UserVotes goatVote={userVotes.goat} toadVote={userVotes.toad} />
+            <button onClick={handleChangeVote}>Change Vote</button>
+          </div>
+        )}
         <OverallResults votes={votes} />
         <div className="main-content">
           <div className="left-column">

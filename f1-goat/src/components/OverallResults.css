@@ -15,7 +15,7 @@
   }
   
   .result-column h2 {
-    color: #ffffff; /* Title text color */
+    color: #ef6e45; /* Title text color */
   }
   
   .result-column a {
@@ -25,3 +25,12 @@
     color: #1da1f2; /* Twitter blue */
   }
   
+  .result span {
+    display: block;
+    font-size: 1.5em; /* Larger font size for the driver name */
+  }
+  
+  .result .votes {
+    font-size: 0.75em; /* Smaller font size for the votes */
+    color: #ef6e45;
+  }
