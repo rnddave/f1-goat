@@ -23,19 +23,20 @@ const BarChart = ({ data, title }) => {
       y: {
         beginAtZero: true,
         ticks: {
-          color: '#ffffff' // Y-axis text color
+          color: '#ef6e45', // Y-axis text color
+          stepSize: 1
         }
       },
       x: {
         ticks: {
-          color: '#ffffff' // X-axis text color
+          color: '#ef6e45' // X-axis text color
         }
       }
     },
     plugins: {
       legend: {
         labels: {
-          color: '#ffffff' // Legend text color
+          color: '#ef6e45' // Legend text color
         }
       }
     }
@@ -43,7 +44,7 @@ const BarChart = ({ data, title }) => {
 
   return (
     <div style={{ height: '300px' }}>
-      <h3 style={{ color: '#ffffff' }}>{title}</h3>
+      <h3 style={{ color: '#ef6e45' }}>{title}</h3>
       <Bar data={chartData} options={options} />
     </div>
   );

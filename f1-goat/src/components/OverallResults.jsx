@@ -10,19 +10,25 @@ const OverallResults = ({ votes }) => {
   useEffect(() => {
     if (votes.goat && votes.toad) {
       setTopGoat(getTopNDrivers(votes, 'goat'));
-      setTopToad(getTopNDrivers(votes, 'toad'));
+      const sortedToad = getTopNDrivers(votes, 'toad').sort((a, b) => a.votes - b.votes);
+      setTopToad(sortedToad);
     }
   }, [votes]);
 
-  const overallGoat = topGoat.length > 0 ? topGoat[0].name : '';
-  const overallToad = topToad.length > 0 ? topToad[0].name : '';
+  const overallGoat = topGoat.length > 0 ? topGoat[0] : { name: '', votes: 0 };
+  const overallToad = topToad.length > 0 ? topToad[0] : { name: '', votes: 0 };
 
   return (
     <div className="overall-results">
       <div className="result-column">
         <div className="result">
           <h2>Overall GOAT 🐐</h2>
-          <span role="img" aria-label="goat">🐐</span> {overallGoat}
+          <span role="img" aria-label="goat">
+            {overallGoat.name}
+          </span>
+          <span className="votes">
+            {overallGoat.votes} votes
+          </span>
         </div>
         <div className="result">
           <BarChart data={topGoat} title="Top 5 GOAT Votes" />
@@ -31,7 +37,12 @@ const OverallResults = ({ votes }) => {
       <div className="result-column">
         <div className="result">
           <h2>Overall TOAD 🐸</h2>
-          <span role="img" aria-label="frog">🐸</span> {overallToad}
+          <span role="img" aria-label="frog">
+            {overallToad.name}
+          </span>
+          <span className="votes">
+            {overallToad.votes} votes
+          </span>
         </div>
         <div className="result">
           <BarChart data={topToad} title="Top 5 TOAD Votes" />
