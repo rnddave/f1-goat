@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ref, set, get, child } from 'firebase/database';
+import { database } from './firebaseConfig';
 import Hero from './components/Hero';
 import BarChartSection from './components/BarChartSection';
 import Stats from './components/Stats';
@@ -7,32 +9,50 @@ import Vote from './components/Vote';
 import UserVotes from './components/UserVotes';
 import OverallResults from './components/OverallResults';
 import Footer from './components/Footer';
-import { getVotes, saveVotes } from './utils/generateVotes';
 import './App.css';
 
 const App = () => {
-  const [votes, setVotes] = useState(getVotes());
+  const [votes, setVotes] = useState({});
   const [userVotes, setUserVotes] = useState({
     goat: localStorage.getItem('userGoatVote') || '',
     toad: localStorage.getItem('userToadVote') || ''
   });
 
   useEffect(() => {
-    setVotes(getVotes());
+    const fetchVotes = async () => {
+      const dbRef = ref(database);
+      const snapshot = await get(child(dbRef, 'votes'));
+      if (snapshot.exists()) {
+        setVotes(snapshot.val());
+      } else {
+        console.log('No data available');
+      }
+    };
+
+    fetchVotes();
   }, []);
 
-  const handleVote = (goat, toad) => {
+  const handleVote = async (goat, toad) => {
     const updatedVotes = { ...votes };
     if (goat) {
-      updatedVotes.goat[goat] = (updatedVotes.goat[goat] || 0) + 1;
+      updatedVotes.goat = {
+        ...updatedVotes.goat,
+        [goat]: (updatedVotes.goat[goat] || 0) + 1
+      };
       localStorage.setItem('userGoatVote', goat);
     }
     if (toad) {
-      updatedVotes.toad[toad] = (updatedVotes.toad[toad] || 0) + 1;
+      updatedVotes.toad = {
+        ...updatedVotes.toad,
+        [toad]: (updatedVotes.toad[toad] || 0) + 1
+      };
       localStorage.setItem('userToadVote', toad);
     }
+
     setVotes(updatedVotes);
-    saveVotes(updatedVotes);
+
+    await set(ref(database, 'votes'), updatedVotes);
+
     setUserVotes({ goat, toad });
   };
 
@@ -44,7 +64,7 @@ const App = () => {
         <Hero />
         {!hasVoted && <Vote onVote={handleVote} />}
         {hasVoted && <UserVotes goatVote={userVotes.goat} toadVote={userVotes.toad} />}
-        <OverallResults />
+        <OverallResults votes={votes} />
         <div className="main-content">
           <div className="left-column">
             <BarChartSection />
