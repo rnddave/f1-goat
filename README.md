@@ -19,6 +19,14 @@ Check out the live demo of the project: [F1 GOAT](https://f1-goat.com)
 - **Firebase**: Used for authentication and real-time database.
 - **Netlify**: Hosting service for the live demo of the project.
 
+## Directory Structure
+
+The repository is organized into the following directories:
+
+- **f1-goat**: This is the current version of the project built using Vite and React.
+- **goat**: This is an earlier version of the project, written in PHP Laravel using Blade for the frontend.
+- **python**: This directory contains scripts for building bar-chart races that feature on the website.
+
 ## About the Project
 
 This project was initially conceived as a data analytics project to show stats on F1 drivers, constructors, and engine manufacturers. However, it evolved into a front-end project focused on engaging visitors with a voting system for F1 drivers.
@@ -42,7 +50,7 @@ This is a Build In Public project. You can follow the progress and contribute to
 2. Navigate to the project directory:
 
    ```bash
-   cd f1-goat
+   cd f1-goat/f1-goat
    ```
 
 3. Install dependencies:
