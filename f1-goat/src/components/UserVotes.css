@@ -1,0 +1,39 @@
+.user-votes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+  
+  .votes-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .vote {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .social-links a {
+    color: #1da1f2; /* Twitter blue */
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:nth-child(1) {
+    color: #3b5998; /* Facebook blue */
+  }
+  
+  .social-links a:hover {
+    color: #f1c40f; /* Yellow color on hover */
+  }
+  
