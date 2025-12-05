@@ -1,3 +1,7 @@
+# 2025-12-05 - ARCHIVED
+
+Archived
+
 # F1 GOAT - Vite/React Project
 
 Welcome to the F1 GOAT project! This is a front-end application built using Vite and React, hosted on Netlify. The project allows visitors to vote for who they think is the best and worst F1 driver of all time.
@@ -91,4 +95,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 
 If you have any questions or feedback, feel free to reach out via [GitHub Issues](https://github.com/rnddave/f1-goat/issues).
+
 
